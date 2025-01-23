@@ -2,20 +2,19 @@ import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/Layout"
 import ReactMarkdown from "react-markdown"
-import Img from "gatsby-image" 
 import * as styles from '../styles/blog-details.module.css'
 
 const BlogDetails = ({ data }) => {
   const { title, thumb, content } = data.strapiPost
-  const image = thumb[0].localFile.childImageSharp.fluid
+  const imageUrl = thumb[0].url
   return (
     <Layout>
       <div className={styles.details}>
         <h2>{title}</h2>
 
         <div className={styles.featured}>
-          {image ? (
-            <Img fluid={image} alt={title} className={styles.featuredImg} />
+          {imageUrl ? (
+            <img src={imageUrl} alt={title} className={styles.featuredImg} />
           ) : (
             <div>No Image Available</div>
           )}
@@ -40,13 +39,7 @@ export const query = graphql`
     strapiPost(slug: { eq: $slug }) {
       title
       thumb {
-        localFile {
-          childImageSharp {
-            fluid(maxWidth: 800) {
-              ...GatsbyImageSharpFluid
-            }
-          }
-        }
+          url
       }
       content {
         data {

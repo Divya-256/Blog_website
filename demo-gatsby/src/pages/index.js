@@ -2,7 +2,7 @@ import React from "react"
 import { graphql, Link } from "gatsby"
 import Layout from "../components/Layout"
 import * as styles from "../styles/home.module.css"
-import Img from "gatsby-image" 
+
 
 export default function Home({ data }) {
   const {
@@ -13,7 +13,7 @@ export default function Home({ data }) {
     coverImage,
   } = data.strapiHome
 
-  const image = coverImage[0].localFile.childImageSharp.fluid
+  const imageUrl = coverImage[0].url
 
   return (
     <Layout>
@@ -26,7 +26,7 @@ export default function Home({ data }) {
             {link_text}
           </Link>
         </div>
-        <Img fluid={image} alt="Banner"  />
+        <img src={imageUrl} alt="Banner" className={styles.bannerImg} />
       </section>
     </Layout>
   )
@@ -40,13 +40,7 @@ export const query = graphql`
       link_text
       description
       coverImage {
-        localFile {
-          childImageSharp {
-            fluid(maxWidth: 1200) {
-              ...GatsbyImageSharpFluid
-            }
-          }
-        }
+          url
       }
     }
   }

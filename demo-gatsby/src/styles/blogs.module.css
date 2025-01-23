@@ -37,6 +37,7 @@
 .blogImg{
  
   height: 15vw;
+  width: 17vw;
 }
 
 @media (max-width: 768px) {
@@ -49,5 +50,6 @@
   }
   .blogImg{
     height: 50vw;
+    width: 50vw;
   }
 }

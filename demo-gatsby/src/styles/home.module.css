@@ -25,7 +25,10 @@
     height: 60vh;
   }
 
-
+  .bannerImg{
+    height: 25vw;
+    width: 30vw;
+  }
   @media (max-width: 768px) {
       .header{
         padding: 4vw;
