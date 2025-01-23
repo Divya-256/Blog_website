@@ -1,0 +1,55 @@
+.header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 40px;
+    align-items: center;
+  }
+  .header h2 {
+    font-size: 4em;
+  }
+  .header h3 {
+    font-size: 3em;
+    font-weight: 400;
+    margin-bottom: 20px;
+  }
+  .btn {
+    display: inline-block;
+    background: #D42990;
+    padding: 10px 16px;
+    border-radius: 10px;
+    margin-top: 20px;
+    font-weight: 500;
+  }
+  .mainPart{
+    margin-top: 8vw;
+    height: 60vh;
+  }
+
+
+  @media (max-width: 768px) {
+      .header{
+        padding: 4vw;
+        display: grid;
+        grid-template-columns:  1fr;
+        grid-template-areas:
+        "image"
+        "content";
+      }
+      .header img,
+      .header .gatsby-image-wrapper {
+        grid-area: image;
+        width: 100%;
+        height: auto;
+      }
+        .mainPart {
+        grid-area: content;
+        text-align: center;
+      }
+      .header h2{
+        font-size: 3em;
+      }
+      .header h3{
+        margin-top: 2vw;
+        font-size: 2em;
+      }
+  }
