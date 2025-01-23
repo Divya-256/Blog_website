@@ -13,6 +13,7 @@ require("dotenv").config({
 
 const strapiConfig = {
   apiURL: process.env.STRAPI_API_URL || "http://127.0.0.1:1337",
+  accessToken: process.env.STRAPI_TOKEN,
   collectionTypes: ["post","about","home"],
 };
 
