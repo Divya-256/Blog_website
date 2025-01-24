@@ -13,7 +13,7 @@ export default function Home({ data }) {
     coverImage,
   } = data.strapiHome
 
-  const imageUrl = coverImage[0].url
+  const imageUrl = `https://blog-backend-1zda.onrender.com` + coverImage[0].url;
 
   return (
     <Layout>

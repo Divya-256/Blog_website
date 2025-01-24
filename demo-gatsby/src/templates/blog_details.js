@@ -6,7 +6,7 @@ import * as styles from '../styles/blog-details.module.css'
 
 const BlogDetails = ({ data }) => {
   const { title, thumb, content } = data.strapiPost
-  const imageUrl = thumb[0].url
+  const imageUrl = `https://blog-backend-1zda.onrender.com` +thumb[0].url;
   return (
     <Layout>
       <div className={styles.details}>

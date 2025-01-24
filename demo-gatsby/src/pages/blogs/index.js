@@ -15,7 +15,10 @@ const Blogs = ({ data }) => {
 
         <div className={styles.blogs}>
           {blogs.map(blog => {
-            const imageUrl = blog.thumb && blog.thumb.length > 0 ? blog.thumb[0].url : null;
+            const imageUrl = blog.thumb && blog.thumb.length > 0
+              ? `https://blog-backend-1zda.onrender.com${blog.thumb[0].url}`
+              : null; 
+
             return (
               <Link to={`/blogs/${blog.slug}`} key={blog.id}>
                 <div>
